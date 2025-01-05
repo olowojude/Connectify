@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}" />
+
+<div class="navbar">
+  <a href=""><h2>Connectify</h2></a>
+  <div class="nav-links">
+    {% if request.user.is_authenticated %}
+    <a href="">Edit Profile</a>
+    <a href="">Logout</a>
+    {% endif %}
+  </div>
+</div>
