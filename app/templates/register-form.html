@@ -1,0 +1,24 @@
+{% extends 'preview-main-page.html' %} {% block content %}
+<div class="">
+  <form action="" method="POST">
+    {% csrf_token %} {{ registerform.username.label }} {{registerform.username}}
+    <br />
+
+    {{ registerform.email.label }} {{ registerform.email }}<br />
+
+    {{ registerform.password1.label }} {{ registerform.password1 }}<br />
+
+    {{ registerform.password2.label }} {{ registerform.password2 }}<br />
+    <input type="submit" value="Submit" />
+
+    {{ registerform.errors }}
+  </form>
+  <div>
+    <p>
+      Already have an account?
+      <a href="{% url 'loginpage' %}" class="login-to-acct">Login</a>
+    </p>
+  </div>
+
+  {% endblock %}
+</div>

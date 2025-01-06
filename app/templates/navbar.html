@@ -5,8 +5,7 @@
   <a href=""><h2>Connectify</h2></a>
   <div class="nav-links">
     {% if request.user.is_authenticated %}
-    <a href="">Edit Profile</a>
-    <a href="">Logout</a>
+    <a href="{% url 'logoutpage' %}">Logout</a>
     {% endif %}
   </div>
 </div>
