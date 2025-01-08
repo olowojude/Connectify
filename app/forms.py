@@ -14,3 +14,9 @@ class UserForm(ModelForm):
     class Meta:
         model = User
         fields = ["profile_image", "bio", "username", "email", ]
+
+# ADD LINK FORM
+class AddLinkForm(ModelForm):
+    class Meta:
+        model = Link
+        fields = ["name", "url"]

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from .models import Link, User
-from .forms import RegisterForm, UserForm
+from .forms import RegisterForm, UserForm, AddLinkForm
 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -65,3 +65,49 @@ def admin(request):
         "links": links
     }
     return render(request, "admin-page.html", context)
+
+
+# Add link view
+@login_required(login_url="loginpage")
+def addlink(request):
+
+    if request.method == "POST":
+        addlinkform = AddLinkForm(request.POST)
+        if addlinkform.is_valid():
+            form = addlinkform.save(commit=False)
+            form.user = request.user
+            form.save()
+        return redirect('admin')
+    else:
+        addlinkform = AddLinkForm()
+
+    context = {"addlinkform": addlinkform}
+    return render(request, "add-link-page.html", context)
+
+
+# Update link view
+@ login_required(login_url="loginpage")
+def updatelink(request, pk):
+    updatelink = Link.objects.get(id=pk)
+    updatelinkform = AddLinkForm(instance=updatelink)
+
+    if request.method == "POST":
+        updatelinkform = AddLinkForm(request.POST, instance=updatelink)
+        if updatelinkform.is_valid():
+            updatelinkform.save()
+            return redirect('admin')
+
+    context = {"updatelinkform": updatelinkform}
+    return render(request, "update-link-page.html", context)
+
+
+# Delete link view
+@ login_required(login_url="loginpage")
+def deletelink(request, pk):
+    deletelink = Link.objects.get(id=pk)
+    if request.method == 'POST':
+        deletelink.delete()
+        return redirect("admin")
+
+    context = {"deletelink": deletelink}
+    return render(request, "delete-link-page.html", context)
