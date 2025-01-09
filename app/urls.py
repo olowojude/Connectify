@@ -10,4 +10,5 @@ urlpatterns = [
     path("add-link/", views.addlink, name="addlink"),
     path("update-link/<str:pk>/", views.updatelink, name="updatelink"),
     path("delete-link/<str:pk>/", views.deletelink, name="deletelink"),
+    re_path(r'^(?P<username>\w+)/$', views.preview, name="preview"),
 ]

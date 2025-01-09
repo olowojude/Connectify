@@ -111,3 +111,14 @@ def deletelink(request, pk):
 
     context = {"deletelink": deletelink}
     return render(request, "delete-link-page.html", context)
+
+
+# Preview page view
+def preview(request, username):
+    username = User.objects.get(username=username)
+    links = Link.objects.filter(user=request.user)
+
+    context = {
+        "links": links
+    }
+    return render(request, "preview-page.html", context)

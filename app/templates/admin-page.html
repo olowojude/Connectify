@@ -1,25 +1,43 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
-<ul class="links">
-  {% for link in links %}
-  <li class="link">
-    <a class="link-name" href="{{link.url}}">{{link.name}}</a>
-  </li>
-  <div class="edit-delete-link-container">
-    <a class="edit" href="{% url 'updatelink' link.id %}"
-      >Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i
-    ></a>
-    <a class="delete" href="{% url 'deletelink' link.id %}"
-      ><i class="fa fa-trash-o" aria-hidden="true"></i
-    ></a>
-  </div>
-</ul>
-{% empty %}
-<ul>
-  <li class="no-links">
-    You have no links, click the "Add a link" button to create your first link
-  </li>
-  {% endfor %}
-</ul>
 
-<a href="{% url 'addlink' %}" class="add-a-link">Add a link</a>
-{% endblock %}
+<div class="">
+  <div class="">
+    {% if request.user.profile_image %}
+    <img src="{{ request.user.profile_image.url }}" alt="" /><br />
+    {% endif %}
+    <span class="">@{{request.user.username}}</span>
+    {% if request.user.bio %}
+    <span class="">{{ request.user.bio }}</span>
+    {% endif %}
+  </div>
+
+  <ul class="links">
+    {% for link in links %}
+    <li class="link">
+      <a class="link-name" href="{{link.url}}">{{link.name}}</a>
+    </li>
+    <div class="edit-delete-link-container">
+      <a class="edit" href="{% url 'updatelink' link.id %}"
+        >Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i
+      ></a>
+      <a class="delete" href="{% url 'deletelink' link.id %}"
+        ><i class="fa fa-trash-o" aria-hidden="true"></i
+      ></a>
+    </div>
+  </ul>
+  {% empty %}
+  <ul>
+    <li class="no-links">
+      You have no links, click the "Add a link" button to create your first link
+    </li>
+    {% endfor %}
+  </ul>
+
+  <div class="">
+    <a href="{% url 'addlink' %}" class="add-a-link">Add a link</a>
+    <a href="{% url 'preview' request.user.username %}" class="preview"
+      >Preview</a
+    >
+  </div>
+  {% endblock %}
+</div>
