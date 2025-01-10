@@ -1,6 +1,9 @@
 from django.urls import path, re_path
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 
 urlpatterns = [
@@ -14,5 +17,9 @@ urlpatterns = [
     path("delete-link/<str:pk>/", views.deletelink, name="deletelink"),
     re_path(r'^(?P<username>\w+)/$', views.preview, name="preview"),
 ]
-
+# URL patterns to serve static files during development
 urlpatterns += staticfiles_urlpatterns()
+
+# URL patterns to serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
