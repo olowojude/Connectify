@@ -1,10 +1,10 @@
 {% extends 'preview-main-page.html' %} {% load static %} {% block content %}
 
-<div class="">
-  <div class="">
+<div class="container">
+  <div class="profile-section">
     {% if request.user.profile_image %}
     <img src="{{ request.user.profile_image.url }}" alt="" /><br />
-    {% endif %} 
+    {% endif %}
     <span class="username">@{{request.user.username}}</span>
     {% if request.user.bio %}
     <span class="bio">{{ request.user.bio }}</span>
@@ -12,8 +12,8 @@
   </div>
 
   {% for link in links %}
-  <ul class=">
-    <li class=""><a href="{{link.url}}">{{link.name}}</a></li>
+  <ul class="links">
+    <li class="link"><a href="{{link.url}}">{{link.name}}</a></li>
   </ul>
   {% endfor %}
 </div>

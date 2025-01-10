@@ -1,5 +1,5 @@
 {% extends 'main.html' %} {% block content %}
-<div class="">
+<div class="container addlink">
   <form action="" method="POST">
     {% csrf_token %} {{ addlinkform.as_p }}
     <input type="submit" class="submit" value="Submit" />

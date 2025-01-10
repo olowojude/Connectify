@@ -1,18 +1,22 @@
 {% extends 'preview-main-page.html' %} {% load static %} {% block content %}
-<div class="">
-  <img src="" alt="" />
+<div class="home-container">
+  <img src="{% static 'images/links.png' %}" alt="" />
   <div class="text">
     <h3>Easily connect all your socials, websites into one single page.</h3>
 
-    <p class="">One link for everything you love and everything you do.</p>
+    <p class="home-p-tag">
+      One link for everything you love and everything you do.
+    </p>
 
     <p>
-      <a href="{% url 'register' %}" class=""> Get started for free </a>
+      <a href="{% url 'register' %} " class="get-started-btn">
+        Get started for free
+      </a>
     </p>
 
     <p>
       Already have an account?
-      <a href="{% url 'loginpage' %}" class="">Login</a>
+      <a href="{% url 'loginpage' %}" class="login-btn">Login</a>
     </p>
   </div>
 </div>

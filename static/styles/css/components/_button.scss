@@ -1,0 +1,135 @@
+@use "../abstracts/mixins" as *;
+
+
+
+/* links components */
+.links {
+    margin: 1em;
+}
+
+.link {
+    // padding: 0;
+    padding: 1.5em 1em;
+    text-align: center;
+    border-radius: 20px;
+    width: 30em;
+    transition: .5s;
+    background: #6e6d68;
+
+    &:hover {
+        transform: scale(0.9);
+    }
+}
+
+.no-links {
+    text-align: center;
+    color: red;
+}
+
+.edit-delete-link-container {
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.edit {
+    margin-right: 1em;
+}
+
+.delete,
+.fa-trash-o {
+    color: rgb(194, 43, 43);
+}
+
+// preview and add link container
+.bottom-btns {
+    margin-top: 5em;
+    position: sticky;
+
+    a {
+        display: block;
+        text-align: center;
+        margin: 1em auto;
+        padding: 1em;
+        border-radius: 20px;
+        color: black;
+        width: 15em;
+    }
+}
+
+.add-a-link {
+    background: #13cf33;
+}
+
+.preview {
+    background: white;
+}
+
+.submit {
+    background: #13cf33;
+    border: none;
+}
+
+// home page "get started btn"
+.get-started-btn {
+    background: #13cf33;
+    @include home-page-btn();
+}
+
+// home page "login btn"
+.login-btn {
+    text-decoration: underline;
+}
+
+// media queries
+@include tab {
+    .link {
+        width: 25em;
+        padding: 1em .7em;
+        border-radius: 15px;
+        transition: .7s;
+
+        &:hover {
+            width: 30em;
+        }
+    }
+}
+
+@include big-phone {
+
+    // home page btn(get started)
+    .get-started-btn {
+        background: #13cf33;
+        @include home-page-btn();
+        margin: 1em 0;
+        width: 13em;
+        padding: 1em;
+        border-radius: 20px;
+    }
+
+    // admin btns
+    .link {
+        width: 16em;
+
+        &:hover {
+            width: 19em;
+        }
+    }
+
+    .bottom-btns {
+        margin-top: 3em;
+
+        a {
+            width: 10em;
+        }
+    }
+}
+
+@include small-phone {
+    .link {
+        width: 16em;
+
+        &:hover {
+            width: 18em;
+        }
+    }
+}

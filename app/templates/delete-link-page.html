@@ -1,10 +1,10 @@
 {% extends 'main.html' %} {% block content %}
-<div class="">
+<div class="container delete-link">
   <form method="POST" action="">
     {% csrf_token %}
     <p>Are you sure you want to delete "{{deletelink.name}}"</p>
     <input type="submit" value="Confirm" />
-    <a class="" href="{{request.META.HTTP_REFERER}}">Go back</a>
+    <a class="go-back" href="{{request.META.HTTP_REFERER}}">Go back</a>
   </form>
 </div>
 

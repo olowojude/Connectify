@@ -1,9 +1,8 @@
 {% extends 'main.html' %} {% block content %}
-<div class="">
+<div class="container update">
   <form action="" method="POST">
     {% csrf_token %} {{ updatelinkform.as_p }}
-    <input type="submit" class="" value="Submit" />
+    <input type="submit" class="submit update-link-submit-btn" value="Submit" />
   </form>
-
-  {% endblock %}
 </div>
+{% endblock %}

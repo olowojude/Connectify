@@ -1,0 +1,42 @@
+@use "../abstracts/mixins" as *;
+
+/* profile section component */
+.profile-section {
+    margin: 2em 1em;
+    text-align: center;
+
+    img {
+        display: block;
+        margin: 1em auto;
+        width: 10em;
+        height: 10em;
+        border-radius: 50%;
+        background-position: center;
+        object-fit: cover;
+    }
+
+    .bio {
+        max-width: 35em;
+        display: block;
+        margin: 1em auto;
+        text-align: justify;
+    }
+}
+
+#profile_image-clear_id {
+    width: auto;
+}
+
+// media queries
+@include big-phone {
+    .profile-section {
+        img {
+            width: 7em;
+            height: 7em;
+        }
+
+        .bio {
+            max-width: 18em;
+        }
+    }
+}

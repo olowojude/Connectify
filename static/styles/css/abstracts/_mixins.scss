@@ -1,0 +1,41 @@
+@use "./variables" as *;
+
+@mixin form-input {
+    width: 30em;
+    background: #131212;;
+    outline: none;
+    padding: 1em .7em;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-bottom: 1em;
+    display: block;
+    margin: 0 auto;
+}
+
+@mixin tab {
+    @media (max-width: #{$tab}) {
+        @content;
+    }
+}
+
+@mixin big-phone {
+    @media (max-width: #{$big-phone}) {
+        @content;
+    }
+}
+@mixin small-phone {
+    @media (max-width: #{$small-phone}) {
+        @content;
+    }
+}
+
+// home page btns mixins
+@mixin home-page-btn {
+    margin: 2em 0;
+    display: block;
+    width: 15em;
+    border-radius: 40px;
+    text-align: center;
+    padding: 1.5em;
+}
