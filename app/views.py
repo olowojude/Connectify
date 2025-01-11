@@ -122,3 +122,20 @@ def preview(request, username):
         "links": links
     }
     return render(request, "preview-page.html", context)
+
+# Update User profile view
+@ login_required(login_url="loginpage")
+def updateProfile(request):
+
+    user = request.user
+    form = UserForm(instance=user)
+
+    if request.method == "POST":
+        form = UserForm(request.POST, request.FILES, instance=user)
+        if form.is_valid:
+            form.save()
+            return redirect("admin")
+
+    context = {"form": form}
+    return render(request, "update-profile-page.html", context)
+

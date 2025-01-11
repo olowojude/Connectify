@@ -16,6 +16,7 @@ urlpatterns = [
     path("update-link/<str:pk>/", views.updatelink, name="updatelink"),
     path("delete-link/<str:pk>/", views.deletelink, name="deletelink"),
     re_path(r'^(?P<username>\w+)/$', views.preview, name="preview"),
+    path("update-profile/", views.updateProfile, name="updateprofile"),
 ]
 # URL patterns to serve static files during development
 urlpatterns += staticfiles_urlpatterns()
