@@ -35,9 +35,15 @@
 
   <div class="bottom-btns">
     <a href="{% url 'addlink' %}" class="add-a-link">Add a link</a>
-    <a href="{% url 'preview' request.user.username %}" class="preview"
+    <a
+      id="previewButton"
+      href="{% url 'preview' request.user.username %}"
+      class="preview"
       >Preview</a
     >
+    <button id="copyLinkButton" class="copy-unique-link">
+      Copy Unique Link
+    </button>
   </div>
 </div>
 

@@ -50,7 +50,7 @@
         text-align: center;
         margin: 1em auto;
         padding: 1em;
-        border-radius: 20px;
+        border-radius: 1em;
         color: black;
         width: 15em;
     }
@@ -62,6 +62,16 @@
 
 .preview {
     background: white;
+}
+.copy-unique-link {
+    display: block;
+    text-align: center;
+    margin: 1em auto;
+    padding: 1.5em;
+    border-radius: 1.5em;
+    color: black;
+    width: 18em;
+    border: black;
 }
 
 .submit {
