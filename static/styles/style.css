@@ -294,7 +294,7 @@ form p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 2em;
+  padding: 2em 5em;
   align-items: center;
 }
 
@@ -354,7 +354,7 @@ form p {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin: 5em 2em;
+  padding: 4em 5em 1em;
   height: 90vh;
 }
 .home-container img {
@@ -387,6 +387,7 @@ form p {
 @media (max-width: 500px) {
   .home-container img {
     width: 18em;
+    padding: 5em 5em 2em;
     height: 17em;
     margin: 1em auto;
   }
@@ -398,6 +399,7 @@ form p {
   .home-container img {
     width: 16em;
     height: 17em;
+    padding: 5em 5em 2em;
   }
 }
 .go-back {

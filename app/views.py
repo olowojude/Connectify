@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Link, User
 from .forms import RegisterForm, UserForm, AddLinkForm
@@ -115,7 +115,7 @@ def deletelink(request, pk):
 
 # Preview page view
 def preview(request, username):
-    username = User.objects.get(username=username)
+    user = get_object_or_404(User, username=username)
     links = Link.objects.filter(user=request.user)
 
     context = {
