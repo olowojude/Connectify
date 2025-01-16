@@ -60,3 +60,10 @@
 
 7. Open your browser and visit `http://127.0.0.1:8000/` to see the app in action.
 
+
+## Contributing
+- Fork the repository.
+- Create your branch (git checkout -b feature/your-feature).
+- Commit your changes (git commit -am 'Add new feature').
+- Push to the branch (git push origin feature/your-feature).
+- Open a pull request.
