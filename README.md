@@ -63,7 +63,7 @@
 
 ## Contributing
 - Fork the repository.
-- Create your branch (git checkout -b feature/your-feature).
-- Commit your changes (git commit -am 'Add new feature').
-- Push to the branch (git push origin feature/your-feature).
+- Create your branch (`git checkout -b feature/your-feature`).
+- Commit your changes (`git commit -am 'Add new feature`).
+- Push to the branch (`git push origin feature/your-feature`).
 - Open a pull request.
